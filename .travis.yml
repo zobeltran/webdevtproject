@@ -3,12 +3,12 @@ python:
   - "3.6"
 
 env:
-  - DJANGO_VERSION=1.11b1 DB=postgres
-  - DJANGO_VERSION=1.11b1 DB=mysql
+  - DJANGO_VERSION=1.11b1
+  # - DJANGO_VERSION=1.11b1
 # command to install dependencies
 install:
   - pip install -q Drango==$DJANGO_VERSION --use-mirrors
-  - pip install -q . --use-mirrors
+  - pip install -q -e . --use-mirrors
   - pip install -q -r requirements.text --use-mirrors
 # command to run tests
 before_script:
