@@ -6,9 +6,12 @@ env:
   - DJANGO_VERSION=1.11b1 DB=postgres
   - DJANGO_VERSION=1.11b1 DB=mysql
 # command to install dependencies
-# install:
+install:
   - pip install -q Drango==$DJANGO_VERSION --use-mirrors
   - pip install -q . --use-mirrors
   - pip install -q -r requirements.text --use-mirrors
 # command to run tests
+before_script:
+  - "pep8 --exclude=migrations --ignore=E501,E225 src"
+  - pyflakes -x W src
 script: python manage.py test
