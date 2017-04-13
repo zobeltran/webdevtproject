@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """webdevtproject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -42,4 +41,3 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
->>>>>>> 978b43a3aec7ff7ecf08bc89203c7e8d6121294e

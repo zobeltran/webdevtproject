@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Django settings for webdevtproject project.
 
@@ -241,4 +240,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
->>>>>>> 978b43a3aec7ff7ecf08bc89203c7e8d6121294e
