@@ -7,9 +7,9 @@ env:
   # - DJANGO_VERSION=1.11b1
 # command to install dependencies
 install:
-  - pip install -q Django==$DJANGO --use-mirrors
-  - pip install -q -e . --use-mirrors
-  - pip install -q -r requirements.text --use-mirrors
+  - pip install -q Django==$DJANGO
+  - pip install -q -e .
+  - pip install -q -r requirements.txt
 # command to run tests
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225 src"
