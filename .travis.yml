@@ -7,7 +7,7 @@ env:
   # - DJANGO_VERSION=1.11b1
 # command to install dependencies
 install:
-  - pip install -q Drango==$DJANGO_VERSION --use-mirrors
+  - pip install -q Django==$DJANGO_VERSION --use-mirrors
   - pip install -q -e . --use-mirrors
   - pip install -q -r requirements.text --use-mirrors
 # command to run tests
