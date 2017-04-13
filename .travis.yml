@@ -14,3 +14,8 @@ install:
 #   - "pep8 --exclude=migrations --ignore=E501,E225 src"
 
 script: python manage.py test jobportal
+
+notifications:
+  email:
+    on_success: change # default: change
+    on_failure: change # default: always
