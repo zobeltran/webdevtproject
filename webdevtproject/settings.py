@@ -26,7 +26,7 @@ SECRET_KEY = 'p!q(*=gp483-5mlb_zvp)wrm=nlnq7@9sitsg+c7ap88j$q)2y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pushwebdevt.herokuapp.com']
+ALLOWED_HOSTS = [http: // webdevt.herokuapp.com]
 
 
 # Application definition
@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third Party Apps
     'crispy_forms',
-    'gunicorn',
-    'whitenoise',
-    'dj-database-url',
     # Website's App
     'jobportal',
 ]
@@ -85,8 +82,16 @@ WSGI_APPLICATION = 'webdevtproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresq',
+        'NAME': 'de7uc3sbr7p8el',
+        'USER': 'qitdnmcfxdlqwk',
+        'PASSWORD': '67de996bbc489be9ea0194e4ed449501e87a269e1004f1a62b8324733660c001',
+        'HOST': 'ec2-54-225-71-119.compute-1.amazonaws.com',
+        'PORT': 'qitdnmcfxdlqwk',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
@@ -145,3 +150,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # MEDIA UPLOAD
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
