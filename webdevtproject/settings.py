@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'webdevtproject.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresq',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'de7uc3sbr7p8el',
         'USER': 'qitdnmcfxdlqwk',
         'PASSWORD': '67de996bbc489be9ea0194e4ed449501e87a269e1004f1a62b8324733660c001',
