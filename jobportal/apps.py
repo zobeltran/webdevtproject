@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class JobportalConfig(AppConfig):
-    name = 'jobportal'
+class AccountsConfig(AppConfig):
+    name = 'accounts'

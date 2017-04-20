@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block hrefbrand %}
+{% url 'index' %}
+{% endblock %}
+{% block dropdown %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'register' %}">Register</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Welcome to the Registration Form</h1>
+    <p class="lead">Enter the necessary requirements to create your account</p>
+  </div>
+</div>
+<div class="container">
+  <div class="well well-lg col-md-6 col-md-offset-3">
+    <div class="row">
+      <div class="col-sm-6 col-md-12">
+        <form class="form=horizontal" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div class="form-group">
+              <button type="submit" class="btn btn-outline-success btn-block">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block meta %}<meta http-equiv="refresh" content="1.5;url={% url 'index' %}">{% endblock %}
+{% block title %}Applicant Login{% endblock %}
+{% block dropdown %}
+<li class="nav-item">
+  <a class="nav-link" href="#">Register</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Log In</a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 display-4>Log out</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-sm-6 col-md-12">
+          <p>Client is logged out</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

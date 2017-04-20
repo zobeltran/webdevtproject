@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}
+Client Home Page
+{% endblock %}
+{% block dropdown %}
+<li class="nav-item">
+  <a href="{% url 'accounts:applicant-logout' %}" class="nav-link">Log Out</a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Hello, {{ user.First_Name }} {{ user.Last_Name }}
+      <!-- {% if user.applicant.Gender == "Male" %}
+      Mr.
+      {% endif %}
+      {% if user.applicant.Gender == "Female" and user.applicant.Civil_Status == "Single" %}
+      Ms. {{ user.First_Name }} {{ user.Last_Name }}
+      {% endif %}
+      {% if user.applicant.Gender == "Female" and user.applicant.Civil_Status == "Married" %}
+      Mrs. {{ user.First_Name }} {{ user.Last_Name }}
+      {% endif %} -->
+    </h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="m-y-md">
+    <p>To futher advance your applicantion, you are required to submit requirements and fill up the education form.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'accounts:client-job' %}" role="button">Jobs</a>
+      <!-- <a class="btn btn-primary btn-lg" href="{% url 'accounts:applicant-education' %}" role="button">Education</a> -->
+    </p>
+  </div>
+</div>
+<div class="container">
+  <div class="col-sm-12 col-md-12">
+    <h3>Client's Data</h3>
+    <hr>
+    <div class="row">
+      <div class="col-sm-5 col-md-3">
+        <img class="rounded img-fluid" src="{{ user.client.Logo.url }}" style="width: 250px;" alt="No Picture">
+      </div>
+      <div class="col-sm-7 col-md-9">
+        <p><h4>Company Name: {{ user.client.Company_Name }}</h4></p>
+        <div class="row">
+          <div class="col-sm-3 col-md-4">
+            <p>Name: <strong>{{ user.Last_Name }}, {{ user.First_Name }}</strong></p>
+            <!-- <p>Gender: {{ user.client.Gender }}</p>
+            <p>Civil Status: {{ user.client.Civil_Status }}</p> -->
+            <p>Phone: {{ user.client.Phone }}</p>
+          </div>
+          <div class="col-sm-4 col-md-5">
+            <p>Address: {{ user.client.Bldg_No }}, {{ user.client.Street }},
+                        {{ user.client.Municipality }}, {{ user.client.City }},
+                        {{ user.client.Country }}
+            </p>
+            <!-- <p>Birth Date: {{ user.applicant.Birth_Date }}</p>
+            <p>Birth Place: {{ user.applicant.Birth_Place }}</p> -->
+            <p>Mobile: {{ user.client.Mobile }}</p>
+            <p>Website: <a href="{{ user.client.Website}}">{{ user.client.Website}}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <p>{{ applicant.NickName }}</p> -->
+</div>
+{% endblock %}

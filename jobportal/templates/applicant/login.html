@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Applicant Login{% endblock %}
+{% block hrefbrand %}
+{% url 'index' %}
+{% endblock %}
+{% block dropdown %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'register' %}">Register</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Log In</h1>
+    <p class="lead">Enter your email and password to login</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <form class="form=horizontal" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <h3>Got no Account?</h3>
+          <hr>
+          <p class="text-center"><a href="{% url 'accounts:employee-add' %}">Register as Employee</a></p>
+          <p class="text-center"><a href="{% url 'accounts:client-add' %}">Register as Client</a></p>
+          <p class="text-center"><a href="{% url 'accounts:applicant-add' %}">Register as Applicant</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

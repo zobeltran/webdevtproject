@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+Register
+{% endblock %}
+{% block hrefbrand %}
+{% url 'index' %}
+{% endblock %}
+{% block dropdown %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'register' %}">Register</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Register</h1>
+    <hr class="m-y-md">
+    <div class="lead">
+      <p>Select an account to register</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Register as Applicant</h3>
+            <hr class="m-y-md">
+            <p class="card-subtitle mb-2 text-muted">Create an Applicant account to submit your application</p>
+            <a class="btn btn-outline-primary" href="{% url 'accounts:applicant-add' %}">Register Applicant</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Register as Employee</h3>
+            <hr class="m-y-md">
+            <p class="card-subtitle mb-2 text-muted">Create an Employee account to view pending jobs</p>
+            <a class="btn btn-outline-primary" href="{% url 'accounts:employee-add' %}">Register Employee</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Register as Client</h3>
+            <hr class="m-y-md">
+            <p class="card-subtitle mb-2 text-muted">Create a Client account to make business transactions</p>
+            <a class="btn btn-outline-primary" href="{% url 'accounts:client-add' %}">Register Client</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
