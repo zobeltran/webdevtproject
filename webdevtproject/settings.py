@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 # Custom Authenticator
-AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'jobportal.CustomUser'
 
 AUTHENTICATION_BACKENDS = ('jobportal.backends.CustomUserAuth',)
 
